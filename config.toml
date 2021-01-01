@@ -1,0 +1,31 @@
+Theme = "minimal"
+Lang = "en"
+
+BaseURL = "https://segfault.me/"
+FootnoteReturnLinkContents = "↩"
+
+
+[params]
+  Blog = ["post"]
+  Title = "Segfault"
+  Subtitle = "Low Level & Reverse Engineering"
+  Description = "Software debugging, reverse engineering, development and  low-level tinkering"
+  Author = "alxbl"
+  Link = "https://github.com/alxbl"
+
+  Avatar = "https://avatars1.githubusercontent.com/u/860411?s=460&v=4"
+
+[[params.social]]
+  Site = "GitHub"
+  Link = "https://github.com/alxbl"
+
+[[params.social]]
+  Site = "Twitter"
+  Link = "https://twitter/alxbl_sec"
+
+[[params.social]]
+  Site = "RSS"
+  Link  = "/atom.xml"
+
+[permalinks]
+  post = "/:year/:month/:day/:title/"
