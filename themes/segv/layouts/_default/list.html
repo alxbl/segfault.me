@@ -1,0 +1,5 @@
+{{ define "content" }}
+{{ range .Site.RegularPages }}
+{{ .Render "entry" }}
+{{ end }}
+{{ end }}

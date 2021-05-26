@@ -1,0 +1,16 @@
+{{ define "content" }}
+<article>
+  <header>
+    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <div class="date"><time datetime="{{ .PublishDate }}">{{ i18n "date" .PublishDate }}</time></div>
+    <ul class="tags">
+      {{ range .Params.tags }}
+      <li class="tag"><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a></li>
+      {{ end }}
+    </ul>
+  </header>
+  <main class="post">
+    {{ .Content }}
+  </main>
+</article>
+{{ end }}

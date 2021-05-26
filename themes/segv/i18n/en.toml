@@ -1,0 +1,2 @@
+[date]
+other = "{{ .Format \"January 2, 2006\" }}"

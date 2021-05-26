@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    {{- if .IsHome }}{{ .Site.Title }} &middot; {{ .Site.Params.Subtitle }}
+    {{- else }}{{ .Title }} &middot; {{ .Site.Title }}{{- end }}</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  {{ $style := resources.Get "scss/segv.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <link rel="icon" href="/favicon.png">
+  {{- range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML -}}
+  {{- end -}}
+  <meta name="author" content="{{ .Site.Params.Author }}">
+  <meta name="description" content="{{ .Site.Params.Description }}">
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+</head>
+
+<body>
+  <div id="w">
+    {{- block "header" . }}
+    <header id="h">
+      <h1><a href="/">{{ .Site.Title | lower }}</a></h1>
+      <img src="{{ .Site.Params.Avatar }}">
+      <h2>by <a href="https://github.com/alxbl" target="_blank">{{ .Site.Params.Author }}</a></h2>
+      <nav></nav>
+    </header>
+    {{- end -}}
+    <div id="c">
+      {{ block "content" . }}{{ end }}
+    </div>
+  </div>
+  <footer id="f">
+    {{ block "footer" . }}
+    {{ partial "footer" . }}
+    {{ end }}
+  </footer>
+</body>
+
+</html>

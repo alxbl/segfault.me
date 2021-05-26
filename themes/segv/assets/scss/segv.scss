@@ -1,0 +1,209 @@
+/* segfault-theme |MIT| A minimalist hexo theme for https://segfault.me */
+ul,
+ol,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+html {
+  color: #212121;
+  font-family: 'Noto Sans', sans-serif;
+}
+body {
+  background: #fafafa;
+}
+#w {
+  margin: 0 auto;
+  margin-top: 1em;
+  width: 90%;
+}
+#c .title {
+  margin-bottom: 0.5em;
+}
+#h {
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  margin-bottom: 0.5em;
+  padding-bottom: 0.3em;
+}
+#h h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+#h h2 {
+  font-size: 0.75em;
+  font-weight: normal;
+  font-style: italic;
+}
+#h img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-bottom: 0.5em;
+}
+#h nav {
+  margin-top: 1em;
+}
+#h nav a {
+  display: inline-block;
+  margin-right: 0.5em;
+  font-weight: 700;
+}
+#h nav a:last-child {
+  margin-right: 0;
+}
+#h ol li,
+#f ol li,
+#h ul li,
+#f ul li {
+  display: inline-block;
+  padding: 0 0.3em;
+}
+#c .nav {
+  text-align: center;
+  font-size: 2.5em;
+}
+#c .nav a,
+#c .nav a:visited,
+#c .nav a:focus,
+#c .nav a:active {
+  color: #00bcd4;
+}
+#c .nav .no {
+  color: rgba(0,0,0,0.3);
+}
+#f {
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 0.3em;
+}
+@media only screen and (min-width: 675px) {
+  #w {
+    width: 650px;
+  }
+}
+a {
+  color: #00bcd4;
+}
+a:hover {
+  color: #008494;
+}
+#f ul a {
+  color: #212121;
+}
+#f ul a:hover {
+  color: #008494;
+}
+article header {
+  display: flex;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+}
+article header h1 {
+  flex-basis: 100%;
+  margin-bottom: 0.05em;
+}
+article header h1 a {
+  display: block;
+}
+article header h1 a:hover {
+  text-decoration: underline;
+}
+article header .date:not(:last-child):after {
+  content: "|";
+  margin: 0 0.5em;
+}
+article header .date,
+article header .tags {
+  flex-grow: 0;
+  font-size: 0.75em;
+}
+article header .tags {
+  flex-grow: 1;
+  align-self: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+article header .tags li {
+  display: inline-block;
+}
+article header .tags a {
+  color: #212121;
+}
+article header .tags a:hover {
+  text-decoration: underline;
+}
+article .tag {
+  padding-right: 0.3em;
+}
+article .tag:before {
+  content: "#";
+  color: #00bcd4;
+}
+main.post blockquote p {
+  border-left: 3px solid #00bcd4;
+  border-radius: 3px;
+  padding: 0.5em;
+  background: rgba(0,0,0,0.05);
+}
+main.post div.highlight pre {
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  padding: 2px 5px;
+  overflow-x: auto;
+  &:hover {
+      width:140%;
+  }
+}
+main.post p {
+  margin-bottom: 0.5em;
+  margin-top: 0;
+  text-align: justify;
+}
+main.post img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
+h1 { margin-bottom: .5em; }
+main.post h1,
+main.post h2,
+main.post h3,
+main.post h4,
+main.post h5,
+main.post h6 {
+  margin: 1em 0;
+}
+main.post ul,
+main.post ol {
+  margin-left: 2em;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+main.post ul li,
+main.post ol li {
+  margin-bottom: 1em;
+}
+main.post hr {
+  border: 0;
+  height: 1px;
+  margin: 2em 3em;
+  background: rgba(0,0,0,0.05);
+}
+
+ul.tags {
+  list-style: none;
+}

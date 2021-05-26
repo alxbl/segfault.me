@@ -1,0 +1,17 @@
+{{ define "content" }}
+{{ range (.Paginate .Site.RegularPages).Pages }}
+{{ .Render "entry" }}
+{{ end }}
+<section class="nav">
+  {{ if .Paginator.HasPrev }}
+  <a href="{{ .Paginator.Prev.URL }}" title="Show recent posts"><i class="fa fa-chevron-left"></i></a>
+  {{ else }}
+  <i class="fa fa-chevron-left no"></i>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+  <a href="{{ .Paginator.Next.URL }}" title="Show older posts"><i class="fa fa-chevron-right"></i></a>
+  {{ else }}
+  <i class="fa fa-chevron-right no"></i>
+  {{ end }}
+</section>
+{{ end }}

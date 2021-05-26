@@ -1,0 +1,13 @@
+{{ $url := first 1 .Site.Params.Social  }}
+<div>&copy; 2014 - {{ now.Format "2006" }} <a href="{{ range $url }}{{ .Link }}{{ end }}" _target="blank">{{ .Site.Params.Author }}</a> &#9829;
+  <a href="https://gohugo.io" target="_blank">Hugo</a>
+</div>
+<ul>
+  {{ range .Site.Params.Social }}
+  <li>
+    <a href="{{ .Link }}" target="_blank">
+      <i class="fa fa-{{ .Site | lower }}" title="{{ .Site }}"></i>
+    </a>
+  </li>
+  {{ end }}
+</ul>
