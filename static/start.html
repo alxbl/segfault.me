@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="/favicon.png">
+
+  <title>Start Page</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    /* Struct */
+    body, html { width: 100%; height: 100%; margin: 0; padding: 0; border: 0 }
+    #w { margin: 0 2em }
+    #l { display: flex; flex-direction: row; padding-top: 10em; justify-content: space-around}
+    #l > div { flex: 1; flex-grow: 0}
+    ul { list-style: none; padding: 0 }
+
+    /* Theme */
+    body { font-family: 'Noto Sans', Arial, sans-serif; }
+    body { background: #212121; color: #f1f1f1; }
+    a, a:link, a:visited, a:focus, a:active { color: #3dbce4; }
+    a:hover { color: #1cc9ff; }
+
+  </style>
+</head>
+
+<body>
+  <main id="w">
+    <section id="l">
+      <div>
+        <h1>Development</h1>
+        <ul>
+          <li>Python: <a id="py2">2</a> | <a id="py3">3</a></li>
+          <li><a id="rust">Rust</a></li>
+          <li><a id="so">Stack Overflow</a></li>
+          <li><a id="cpp">C/C++</a></li>
+          <li><a id="x86">x86-64</a></li>
+          <li><a id="arm">ARM</a></li>
+        </ul>
+        <h1>CTF</h1>
+        <ul>
+          <li><a id="ctf">ctftime</a></li>
+          <li><a id="rzt">RingZer0</a></li>
+          <li><a id="htb">Hack The Box</a></li>
+          <!-- <li><a id="notes">Notes (WIP)</a></li> -->
+        </ul>
+      </div>
+      <div>
+        <h1>Lifestyle</h1>
+        <ul>
+          <li><a id="strava">Strava</a></li>
+          <li><a id="garmin">Garmin</a></li>
+          <li><a id="crono">Cronometer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h1>Profile</h1>
+        <ul>
+          <li><a id="keybase">Keybase.io</a></li>
+          <li><a id="segfault">Segfault.me</a></li>
+          <li><a id="gh">Github</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script type="text/javascript">
+    let links = {
+      'py2': 'https://docs.python.org/2/library/index.html',
+      'py3': 'https://docs.python.org/3/library/index.html',
+      'so': 'https://www.stackoverflow.com',
+      'rust': 'https://doc.rust-lang.org/std/',
+      'x86': 'http://www.felixcloutier.com/x86/',
+      'arm': 'https://developer.arm.com/products/architecture',
+      'cpp': 'https://en.cppreference.com/w/',
+      'ctf': 'https://ctftime.org',
+      'rzt': 'https://ringzer0ctf.com',
+      'htb': 'https://hackthebox.eu',
+      'strava': 'https://www.strava.com',
+      'garmin': 'https://connect.garmin.com',
+      'crono': 'https://www.cronometer.com',
+      'keybase': 'https://keybase.io/alxbl',
+      'segfault': 'https://segfault.me',
+      'gh': 'https://github.com/alxbl',
+    };
+
+    for (let k in links) {
+      let url = links[k];
+      let a = document.getElementById(k);
+      if (!a) continue;
+      a.href = url;
+    }
+  </script>
+</body>
+</html>
