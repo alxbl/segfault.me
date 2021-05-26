@@ -1,0 +1,53 @@
+Theme = "segv"
+Lang = "English"
+LanguageCode = "en"
+Paginate = 5
+
+BaseURL = "https://segfault.me/"
+FootnoteReturnLinkContents = "↩"
+Title = "Segfault"
+
+RssLimit = 15
+
+[mediaTypes]
+[mediaTypes."application/atom+xml"]
+suffixes = ["xml"]
+
+[params]
+  Author = "alxbl"
+  Avatar = "https://avatars1.githubusercontent.com/u/860411?s=460&v=4"
+  Icon   = "https://segfault.me/favicon.png"
+  Blog = ["posts"]
+  Subtitle = "Low Level Software & Reverse Engineering"
+  Description = "Debugging, Reverse Engineering, Security and Low-level tinkering. I also sometimes blog about non-software related things."
+
+
+[[params.social]]
+  Site = "GitHub"
+  Link = "https://github.com/alxbl"
+
+[[params.social]]
+  Site = "Twitter"
+  Link = "https://twitter/alxbl_sec"
+
+[[params.social]]
+  Site = "RSS"
+  Link  = "/atom.xml"
+
+[permalinks]
+  posts = "/:year/:month/:day/:title/"
+
+[taxonomies]
+tag = "tags"
+
+[outputs]
+home = ["html", "atom"]
+section = ["html"]
+taxonomy = ["html"]
+taxonomyTerm = ["html"]
+
+[OutputFormats]
+[OutputFormats.atom]
+  name = "atom"
+  baseName = "atom"
+  mediaType = "application/atom+xml"
