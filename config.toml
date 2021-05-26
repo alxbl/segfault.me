@@ -28,7 +28,7 @@ suffixes = ["xml"]
 
 [[params.social]]
   Site = "Twitter"
-  Link = "https://twitter/alxbl_sec"
+  Link = "https://twitter.com/alxbl_sec"
 
 [[params.social]]
   Site = "RSS"
