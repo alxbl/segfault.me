@@ -1,6 +1,6 @@
 ---
 title: "NorthSec 2021 Writeup: Nestadia Part 1"
-date: 2021-05-23T10:42:42-04:00
+date: 2021-05-26T10:42:42-04:00
 tags: 
   - CTF
   - Reverse
