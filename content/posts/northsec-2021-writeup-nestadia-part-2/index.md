@@ -585,7 +585,7 @@ full track. On that note, I hope you enjoyed reading this writeup as much as I e
 Here's a bit of trivia as well:
 
 - The full track was worth 20 points, with the last flag alone being worth 10.
-- [PauMd][ctftime] was the only team to solve flags 2 and 3
+- [PauMd][ctftime] was the only team to solve flag 3.
 - PauMd spells `pwned` if you look at it upside down with the right font.
 
 ### References
