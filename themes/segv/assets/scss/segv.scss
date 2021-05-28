@@ -105,6 +105,20 @@ a:hover {
 #f ul a:hover {
   color: #008494;
 }
+article {
+    table {
+        border-collapse: collapse;
+
+        tr:nth-child(even) {
+            background: rgba(0,0,0,.05);
+        }
+
+        td, th {
+            padding: 0.5em;
+            border: 0;
+        }
+    }
+}
 article header {
   display: flex;
   margin-bottom: 1em;
@@ -207,3 +221,4 @@ main.post hr {
 ul.tags {
   list-style: none;
 }
+
