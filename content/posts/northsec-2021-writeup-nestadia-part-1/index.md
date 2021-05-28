@@ -1,7 +1,7 @@
 ---
 title: "NorthSec 2021 Writeup: Nestadia Part 1"
-date: 2021-05-26T10:42:42-04:00
-tags: 
+date: 2021-05-26T07:05:00-04:00
+tags:
   - CTF
   - Reverse
   - Writeup
@@ -178,7 +178,7 @@ Now then, it should be time to try those games... but it's still
 pretty tough to play, even locally. But what if we were to extract the
 ROMs from the server binary? Then certainly we could throw them into a
 NES emulator like [FCEUX][fceux] and run them fully offline. Surely,
-there must be a flag in one of those ROMs. 
+there must be a flag in one of those ROMs.
 
 
 ## Carving out the ROMs
@@ -195,8 +195,8 @@ above for a full explanation):
 
 ```plain
 iNES 1.0 File Format (All numbers in decimal)
-  HEADER (16 bytes) 
-    +000 magic     ;  'N' 'E' 'S' '\x1A' 
+  HEADER (16 bytes)
+    +000 magic     ;  'N' 'E' 'S' '\x1A'
     +004 prg_size  ; Program ROM size in 16KB units)
     +005 chr_size  ; Character ROM size in 8KB units)
     +006 flag6     ; various flags
@@ -368,7 +368,7 @@ I then naively thought the flag would be in Flappy Bird, so I
 "reversed" it enough to understand how to get my bird stuck in a
 position where I could let the game run on turbo to get an unlimited
 amount of points, Hoping that the screen would go black, or blue, and
-grant me a flag for figuring out how to cheat at NES games. 
+grant me a flag for figuring out how to cheat at NES games.
 
 !['Clearing' Flappy Bird: No flag.](trying-cheats.png)
 
@@ -550,7 +550,7 @@ familiar with the NES, and get caught up by 6502.
 
 
 [nes]: https://en.wikipedia.org/wiki/Nintendo_Entertainment_System "The Nintendo Entertanment System"
-[6502]: www.obelisk.me.uk/6502/reference.html "6502 Assembler Instruction Set Reference"
+[6502]: http://www.obelisk.me.uk/6502/reference.html "6502 Assembler Instruction Set Reference"
 [stadia]: https://en.wikipedia.org/wiki/Google_Stadia "Google Stadia"
 [fceux]: http://fceux.com/web/home.html "The FCEUX NES emulator"
 [ines]: https://wiki.nesdev.com/w/index.php/INES
