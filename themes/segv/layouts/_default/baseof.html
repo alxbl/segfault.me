@@ -40,6 +40,32 @@
     {{ partial "footer" . }}
     {{ end }}
   </footer>
+  <!-- Image Viewer. -->
+  <div id="img-viewer" style="display: none" onclick="closeViewer()">
+    <figure>
+    <img id="img-vp" src="#">
+    <!-- <caption></caption> -->
+    </figure>
+  </div>
+  <script lang="text/javascript">
+    let viewer = document.getElementById("img-viewer");
+    let viewport = document.getElementById("img-vp");
+    let content = document.getElementById("c");
+
+    function closeViewer() {
+      viewer.style = "display: none;";
+      document.children[0].style="";
+    }
+
+    function showFullscreen(e) {
+      viewport.setAttribute("src", e.target.getAttribute("src"));
+      viewer.style = "";
+      document.children[0].style="overflow: hidden";
+    }
+
+    let imgs = content.getElementsByTagName("img");
+    for (let i of imgs) i.addEventListener("click", showFullscreen);
+  </script>
 </body>
 
 </html>
