@@ -7,13 +7,13 @@ tags:
   - Writeup
 ---
 
-*This blog post outlines flags 3 of the Nestadia reverse engineering track, a cloud-based gaming platform for the NES inspired by Google stadia.*
+*This blog post outlines flag 3 of the Nestadia reverse engineering track, a cloud-based gaming platform for the NES inspired by Google stadia.*
 
 Welcome back to my mini-series on the NorthSec 2021 Nestadia challenge
 track. This time around, we are about to dive deep into NES internals
 to craft a malicious ROM and attack the Nestadia server. I hope you're
 ready for this wild ride. If you haven't [read the first part][part1],
-make sure to head over there and read it firt, as this post is a
+make sure to head over there and read it first, as this post is a
 direct continuation.
 
 Before getting into the writeup, I want to give a big shout out to
