@@ -539,6 +539,8 @@ Little did I know things were about to get a lot more intense. Stay
 tuned for part 2, in which I will go over the 3rd flag, become very
 familiar with the NES, and get caught up by 6502.
 
+**UPDATE**: [Part 2][part2] is now online. Enjoy!
+
 ------
 
 ### References
@@ -556,3 +558,4 @@ familiar with the NES, and get caught up by 6502.
 [ines]: https://wiki.nesdev.com/w/index.php/INES
 [ghidra-nes]: https://github.com/kylewlacy/GhidraNes/ "GhidraNes by @kylewlacy"
 [rust]: https://rust-lang.org "The Rust Programming Language"
+[part2]: /2021/05/28/northsec-2021-writeup-nestadia-part-2/ "NorthSec 2021 Writeup: Nestadia Part 2"
