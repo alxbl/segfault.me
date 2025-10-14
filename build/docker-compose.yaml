@@ -1,0 +1,20 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 4443:443
+    volumes:
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./segv/public:/usr/share/nginx/html:ro
+
+  nghttpx:
+    image: dajobe/nghttpx:latest
+    volumes:
+      - ./nghttpx:/data
+      - ./nginx:/nginx
+    environment:
+      PORT: '3000'
+      CERT_FILE: /nginx/conf.d/segfault.me.pem
+      KEY_FILE: /nginx/conf.d/segfault.me.key
