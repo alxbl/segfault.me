@@ -7,7 +7,7 @@ services:
     volumes:
       - ./nginx/logs:/var/log/nginx
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
-      - ./segv/public:/usr/share/nginx/html:ro
+      - ../public:/usr/share/nginx/html:ro
 
   nghttpx:
     image: dajobe/nghttpx:latest
