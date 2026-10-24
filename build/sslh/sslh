@@ -1,0 +1,4 @@
+# Installed as /etc/default/sslh by setup.sh. Port 443 is shared between SSH and the site: TLS goes to the nginx
+# container (published on loopback only), SSH to the host.
+DAEMON=/usr/sbin/sslh
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:22 --tls 127.0.0.1:4443"
