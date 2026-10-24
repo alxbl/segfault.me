@@ -49,8 +49,9 @@ if ! cmp -s "$DEST/build/sslh/sslh" /etc/default/sslh; then
   systemctl restart sslh
 fi
 
+# The theme uses resources.ToCSS, removed in Hugo 0.128; 0.113.0 is the version the live site was built with.
 docker run --rm --user "$(id -u):$(id -g)" -v "$DEST":/src \
-  hugomods/hugo:debian-ci-non-root hugo
+  hugomods/hugo:exts-0.113.0 hugo
 
 cd "$DEST/build"
 docker-compose up -d --remove-orphans
