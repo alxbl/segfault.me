@@ -13,8 +13,9 @@ services:
     image: dajobe/nghttpx:latest
     volumes:
       - ./nghttpx:/data
-      - ./nginx:/nginx
-    environment:
-      PORT: '3000'
-      CERT_FILE: /nginx/conf.d/segfault.me.pem
-      KEY_FILE: /nginx/conf.d/segfault.me.key
+      # The image ships no CA bundle.
+      - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/ca-certificates.crt:ro
+    extra_hosts:
+      - origin.segfault.me:${SEGV_ORIGIN_IP:?set in build/.env}
+    # No CERT_FILE/KEY_FILE: the frontend is plain HTTP, reachable only from nginx on the compose network.
+    restart: unless-stopped

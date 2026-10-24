@@ -1,3 +1,6 @@
 public/
 _gen/*.pem
 *.key
+
+# Public address of the segv cluster (SEGV_ORIGIN_IP) for nghttpx.
+build/.env
