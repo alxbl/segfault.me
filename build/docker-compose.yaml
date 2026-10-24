@@ -2,12 +2,18 @@ version: '2'
 services:
   nginx:
     image: nginx:latest
+    # sslh (build/sslh/sslh) forwards TLS here from the host's port 443.
     ports:
-      - 4443:443
+      - 127.0.0.1:4443:443
     volumes:
       - ./nginx/logs:/var/log/nginx
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./certs:/etc/nginx/certs:ro
       - ../public:/usr/share/nginx/html:ro
+    # nginx resolves the nghttpx upstream when it loads its configuration.
+    depends_on:
+      - nghttpx
+    restart: unless-stopped
 
   nghttpx:
     image: dajobe/nghttpx:latest

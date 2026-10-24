@@ -4,3 +4,6 @@ _gen/*.pem
 
 # Public address of the segv cluster (SEGV_ORIGIN_IP) for nghttpx.
 build/.env
+
+# Cloudflare origin certificate and key issued by build/setup.sh.
+build/certs/
