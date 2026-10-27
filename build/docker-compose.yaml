@@ -1,4 +1,4 @@
-version: '2'
+version: '2.4'
 services:
   nginx:
     image: nginx:latest
@@ -10,13 +10,12 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./certs:/etc/nginx/certs:ro
       - ../public:/usr/share/nginx/html:ro
-    # nginx resolves the nghttpx upstream when it loads its configuration.
-    depends_on:
-      - nghttpx
     restart: unless-stopped
 
   nghttpx:
     image: dajobe/nghttpx:latest
+    # As PID 1 nghttpx ignores SIGTERM and is SIGKILLed after 10s at shutdown.
+    init: true
     volumes:
       - ./nghttpx:/data
       # The image ships no CA bundle.
