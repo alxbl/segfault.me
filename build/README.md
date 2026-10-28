@@ -10,10 +10,10 @@ Cloudflare -> sslh :443 -> nginx 127.0.0.1:4443 -> static site
 - Everything lives under `/app/segfault.me`; nothing else on the host is configuration.
 - First run needs `CLOUDFLARE_API_TOKEN` (origin certificate, kept in `build/certs/`, never committed) and
   `SEGV_ORIGIN_IP`, the cluster's public address (stored in `build/.env`, never committed). If the address changes, edit
-  `build/.env` and run `docker-compose up -d` in `build/`.
+  `build/.env` and run `docker compose up -d` in `build/`.
 - `build/sslh/sslh` becomes `/etc/default/sslh`.
 - `build/systemd/segfault-compose.service` becomes `/etc/systemd/system/segfault-compose.service`: it runs
-  `docker-compose up -d` at boot. Docker's own `unless-stopped` restart does not bring back a container it force-killed at
+  `docker compose up -d` at boot. Docker's own `unless-stopped` restart does not bring back a container it force-killed at
   shutdown, which left nginx crash-looping and `/auth` returning 525.
 - nginx resolves nghttpx per request, so it starts and serves the blog even when nghttpx is down.
 - nghttpx reaches the cluster as `origin.segfault.me`, an alias injected with `extra_hosts` that matches the Gateway's

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Deploys on a Debian-based host: installs dependencies, clones the
-# repository, generates the site with Hugo and starts it with docker-compose.
+# repository, generates the site with Hugo and starts it with docker compose.
 # Must be run as root. Safe to re-run to update the deployment.
 # Preconditions, each only needed the first time:
 #   CLOUDFLARE_API_TOKEN  a token with the `Zone > SSL and Certificates > Edit permission`, used when build/certs has
@@ -12,7 +12,7 @@ REPO=https://github.com/alxbl/segfault.me.git
 DEST=/app/segfault.me
 
 apt-get update
-apt-get install -y docker.io docker-compose sslh git git-lfs curl jq openssl
+apt-get install -y docker.io docker-compose-v2 sslh git git-lfs curl jq openssl
 
 if [ -d "$DEST/.git" ]; then
   git -C "$DEST" pull --ff-only
@@ -62,8 +62,8 @@ docker run --rm --user "$(id -u):$(id -g)" -v "$DEST":/src \
   hugomods/hugo:exts-0.113.0 hugo
 
 cd "$DEST/build"
-docker-compose up -d --remove-orphans
+docker compose up -d --remove-orphans
 # Mounted configuration is not noticed by `up`.
-docker-compose exec -T nginx nginx -t
-docker-compose exec -T nginx nginx -s reload
-docker-compose kill -s HUP nghttpx
+docker compose exec -T nginx nginx -t
+docker compose exec -T nginx nginx -s reload
+docker compose kill -s HUP nghttpx
