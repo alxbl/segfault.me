@@ -49,6 +49,14 @@ if ! cmp -s "$DEST/build/sslh/sslh" /etc/default/sslh; then
   systemctl restart sslh
 fi
 
+# Starts the stack at boot whatever state docker left the containers in, and stops it before docker at shutdown.
+UNIT=segfault-compose.service
+if ! cmp -s "$DEST/build/systemd/$UNIT" "/etc/systemd/system/$UNIT"; then
+  install -m 644 "$DEST/build/systemd/$UNIT" "/etc/systemd/system/$UNIT"
+  systemctl daemon-reload
+fi
+systemctl enable "$UNIT"
+
 # The theme uses resources.ToCSS, removed in Hugo 0.128; 0.113.0 is the version the live site was built with.
 docker run --rm --user "$(id -u):$(id -g)" -v "$DEST":/src \
   hugomods/hugo:exts-0.113.0 hugo
