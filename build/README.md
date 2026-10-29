@@ -1,4 +1,4 @@
-# Deployment (cortex.segfault.me)
+# Deployment
 
 `setup.sh` is the whole deployment: run it as root on the host, it is safe to re-run to update.
 
