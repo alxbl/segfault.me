@@ -57,9 +57,8 @@ if ! cmp -s "$DEST/build/systemd/$UNIT" "/etc/systemd/system/$UNIT"; then
 fi
 systemctl enable "$UNIT"
 
-# The theme uses resources.ToCSS, removed in Hugo 0.128; 0.113.0 is the version the live site was built with.
 docker run --rm --user "$(id -u):$(id -g)" -v "$DEST":/src \
-  hugomods/hugo:exts-0.113.0 hugo
+  hugomods/hugo:exts-0.154.5 hugo
 
 cd "$DEST/build"
 docker compose up -d --remove-orphans

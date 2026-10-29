@@ -1,13 +1,15 @@
 Theme = "segv"
 Lang = "English"
 LanguageCode = "en"
-Paginate = 5
 
 BaseURL = "https://segfault.me/"
 FootnoteReturnLinkContents = "↩"
 Title = "Segfault"
 
 RssLimit = 15
+
+[pagination]
+  pagerSize = 5
 
 [mediaTypes]
 [mediaTypes."application/atom+xml"]
@@ -44,7 +46,7 @@ tag = "tags"
 home = ["html", "atom"]
 section = ["html"]
 taxonomy = ["html"]
-taxonomyTerm = ["html"]
+term = ["html"]
 
 [OutputFormats]
 [OutputFormats.atom]
