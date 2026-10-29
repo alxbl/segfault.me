@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  {{ $style := resources.Get "scss/segv.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  {{ $style := resources.Get "scss/segv.scss" | css.Sass | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
   <link rel="icon" href="/favicon.png">
   {{- range .AlternativeOutputFormats -}}

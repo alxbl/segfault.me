@@ -3,7 +3,7 @@
 Hugo static blog.
 
 ## Procedures
-- `hugo` is not installed locally. Build in a container pinned to Hugo 0.113.0: `docker run --rm -it --user "$(id -u):$(id -g)" -v$(pwd):/src hugomods/hugo:exts-0.113.0 hugo`.
+- `hugo` is not installed locally. Build in a container pinned to Hugo 0.154.5: `docker run --rm -it --user "$(id -u):$(id -g)" -v$(pwd):/src hugomods/hugo:exts-0.154.5 hugo`.
 - New posts: use the theme's post archetype. It sets `draft: true`; remove it to publish.
 
 ## Deployment (cortex.segfault.me)
@@ -16,7 +16,6 @@ Hugo static blog.
 - `*.png` and `*.jpg` are Git LFS. Ensure LFS is set up before adding images.
 - TLS is a Cloudflare Origin CA cert, so the site only works behind the Cloudflare proxy. Certs and keys are git-ignored; `build/setup.sh` issues a new one via the Cloudflare API when none exists (needs `CLOUDFLARE_API_TOKEN`). Private keys cannot be re-downloaded from Cloudflare.
 - Never read or copy private keys from the production host (`core@cortex.segfault.me`).
-- The theme uses `resources.ToCSS`, removed in Hugo 0.128: do not move to an unpinned or newer Hugo image without porting the theme to `css.Sass`.
 - `static/keybase.txt` is an identity proof; leave it alone.
 
 ## Conventions
