@@ -61,6 +61,8 @@ docker run --rm --user "$(id -u):$(id -g)" -v "$DEST":/src \
   hugomods/hugo:exts-0.154.5 hugo
 
 cd "$DEST/build"
+# `up` alone keeps the cached image for a moving tag such as nginx:latest.
+docker compose pull
 docker compose up -d --remove-orphans
 # Mounted configuration is not noticed by `up`.
 docker compose exec -T nginx nginx -t
